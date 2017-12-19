@@ -1,0 +1,124 @@
+/*
+ *  Author: Melanie Garvey
+ *  Date: 2/22/17
+ *  Project Name: Great Giphy API Search
+ *  Project Criteria:
+        Display four random still gifs on page load.
+        Include feature to play gifs on mouseover.
+        Enable users to search gifs by rating.
+        Enable users to reset search.
+        Display a maximum of search result 24 gifs per page.
+ *  font-family: '  ', sans-serif;
+ *  colors: 
+        gray/shadows - rgb(42, 40, 41)
+        blue - rgb(0, 36, 125)
+        red - rgb(232, 0, 0)
+*/
+@charset 'UTF-8';
+@import url('reset.css');
+@import url('https://fonts.googleapis.com/css?family=Fascinate|Fascinate+Inline|Gravitas+One|Limelight|Poiret+One');
+
+html, body {
+    height: 100%;
+}
+
+body, button {
+    background: rgb(0, 0, 0) url('../images/greatGatsby.jpg') no-repeat center fixed;
+    font-family: 'Fascinate', sans-serif;
+    font-size: 2vw;
+    color: rgb(0, 0, 0);
+    padding: 2vw;
+}
+
+#bigBox {
+    display: block;
+    width: 60vw;
+    height: auto;
+    background: rgba(255, 255, 255, 0.8);
+    margin: 0 auto;
+    padding: 1.5vw;
+    /*box-shadow: 1.5vw 1.5vw 2vw rgba(0, 0, 0, 0.6), 1vw 1vw 1.5vw rgba(255, 255, 255, 0.9) inset;*/
+    box-shadow: 1.5vw 1.5vw 2vw rgba(161, 138, 84, 0.6), -1.5vw 1.5vw 2vw rgba(161, 138, 84, 0.6), 
+        1.5vw -1.5vw 2vw rgba(161, 138, 84, 0.6), -1.5vw -1.5vw 2vw rgba(161, 138, 84, 0.6),
+        0.5vw 0.5vw 1vw rgba(0, 0, 0, 0.4) inset, -0.5vw 0.5vw 1vw rgba(0, 0, 0, 0.4) inset, 
+        0.5vw -0.5vw 1vw rgba(0, 0, 0, 0.4) inset, -0.5vw -0.5vw 1vw rgba(0, 0, 0, 0.4) inset;
+    z-index: 1;
+}
+
+.group::after {
+    content: '.';
+    display: block;
+    height: 0vh;
+    clear: both;
+    visibility: hidden;
+}
+
+h1 {
+    font-size: 5vw;
+    text-align: center;
+    font-family: 'Fascinate Inline', sans-serif;
+}
+
+input[type=text] {
+    width: 90%;
+    display: inline-block;
+    border: 0.75vw double rgb(166, 149, 71);
+    border-radius: 1vw;
+    box-sizing: border-box;
+    background: rgb(0, 0, 0);
+    box-shadow: 0.5vw 0.5vw 1vw rgba(42, 40, 41, 0.9);
+    transition: background 5s;
+}
+
+input[type=text]:hover {
+    background: rgb(255, 255, 255);
+    transition: background 5s;
+}
+
+button {
+    width: 30%;
+    border: 0.75vw double rgb(166, 149, 71);
+    border-radius: 2vw;
+    box-sizing: border-box;
+    background: rgb(0, 0, 0);
+    color: rgb(166, 149, 71);
+    box-shadow: 0.5vw 0.5vw 1vw rgba(42, 40, 41, 0.9);
+    transition: background 5s;
+    text-align: center;
+}
+
+button:hover {
+    background: rgb(255, 255, 255);
+    border: 1vw double rgb(166, 149, 71);
+    color: rgb(166, 149, 71);
+    transition: background 5s;
+}
+
+@media only screen and (max-width: 800px) {
+    body {
+        font-size: 3vw;
+        padding: 0;
+    }
+
+    button {
+        font-size: 3vw;
+        line-height: 4vw;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    body {
+        font-size: 5vw;
+        padding: 0;
+    }
+
+    button {
+        width: 50%;
+        line-height: 5vw;
+        font-size: 6vw;
+    }
+
+    #feedback {
+        width: 100%;
+    }
+}
