@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--
+       Author: Melanie Garvey
+       Date: 2/22/17
+       Project Name: Great Giphy API Search
+       Project Criteria: 
+        Display four random still gifs on page load.
+        Include feature to play gifs on mouseover.
+        Enable users to search gifs by rating.
+        Enable users to reset search.
+        Display a maximum of search result 24 gifs per page.
+    -->
+    <meta charset="utf-8" />
+    <meta id="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>Great Giphy API Search</title>
+    <link rel="stylesheet" href="css/final.css" />
+    <link href="https://fonts.googleapis.com/css?family=Fascinate|Fascinate+Inline|Gravitas+One|Limelight|Poiret+One" rel="stylesheet">
+    <script src="modernizr.custom.65897.js"></script>
+  </head>
+  <body>
+    <div id="bigBox" class="group">
+    <br>
+      <h1>Great Giphy API Search</h1>
+      <br>
+      <br>
+      <div class="outerWrapper">
+        <p>Please record your query in the input box, select a rating from the drop down menu, and press the search button to view results.</p>
+        <br>
+        
+        <form>
+          <input type="text" id="userQuery" placeholder="Input your query here." value="">
+          <br>
+          <br>
+          <div id="userRating" class="form-group">
+            <div>
+              <label for="userRating">Rating:</label>
+              <select id="userRating">
+                <option value="y" selected="selected">Y</option>
+                <option value="g">G</option>
+                <option value="pg">PG</option>
+                <option value="pg-13">PG-13</option>
+                <option value="r">R</option>
+              </select>
+            </div>
+          <br>
+          <div class="buttonContainer">
+          <button type="submit" id="searchButton">Search</button>
+          <br>
+          <br>
+          <button type="reset" id="resetButton">Reset</button>
+          <br>
+          <br>
+          </div>
+        </form>
+        <div id="feedback"></div>
+      </div>
+    </div>
+    <!-- Link in jQuery from CDN -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <!-- My JavaScript -->
+    <script src="final.js"></script>
+  </body>
+</html>
